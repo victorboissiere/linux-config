@@ -52,8 +52,8 @@ new_window pixel 0
 for_window [instance="terminator"] border 1pixel
 
 #MY CUSTOM BIND
-bindcode $mod+69 exec xbacklight - 5
-bindcode $mod+70 exec xbacklight + 5
+bindcode $mod+71 exec xbacklight - 5
+bindcode $mod+72 exec xbacklight + 5
 bindcode $mod+95 exec amixer -D pulse sset Master 5%-
 bindcode 122 exec amixer -D pulse sset Master 5%-
 bindcode $mod+96 exec amixer -D pulse sset Master 5%+
