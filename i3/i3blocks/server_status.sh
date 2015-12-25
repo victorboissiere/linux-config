@@ -1,4 +1,4 @@
-#/bin/sh
+#!/bin/sh
 
 Color_Off='\033[0m'
 Red='\033[0;31m'
