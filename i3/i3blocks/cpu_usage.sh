@@ -42,18 +42,23 @@ while (<MPSTAT>) {
 }
 close(MPSTAT);
 
-$cpu_usage eq -1 and die 'Can\'t find CPU information';
+$cpu_usage eq -1 and die 'Cant find CPU information';
+
+if ($cpu_usage > 50)
+{
+  printf '<span foreground="#F98800">';
+}
+elsif ($cpu_usage > 75)
+{
+  printf '<span foreground="#D50000">';
+}
+else
+{
+  printf '<span foreground="#66BB6A">';
+}
 
 # Print short_text, full_text
-printf "%.${decimals}f%%\n", $cpu_usage;
-printf "%.${decimals}f%%\n", $cpu_usage;
-
-# Print color, if needed
-if ($cpu_usage >= $t_crit) {
-    print "#FF0000\n";
-    exit 33;
-} elsif ($cpu_usage >= $t_warn) {
-    print "#FFFC00\n";
-}
+printf "CPU %.${decimals}f%%", $cpu_usage;
+printf "</span>";
 
 exit 0;

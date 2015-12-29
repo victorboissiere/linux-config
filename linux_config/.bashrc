@@ -7,6 +7,7 @@ alias clion="clion.sh"
 alias phpstorm="sudo /home/victor/prog/programs/PhpStorm-143.382.38/bin/phpstorm.sh"
 alias left="xrandr --output HDMI2 --left-of eDP1"
 alias sl="ls"
+alias pattern="grep -r -n"
 export PS1="\u:\W \$? \\$ \[$(tput sgr0)\]"
 cat ~/Documents/config/ascii_bash
 

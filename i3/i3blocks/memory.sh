@@ -46,20 +46,21 @@ END {
 		total=mem_total/1024/1024
 	}
 	pct=used/total*100
-
+  if (pct > 50)
+  {
+    printf("<span foreground=\"#F98800\">")
+  }
+  else if (pct > 75)
+  {
+    printf("<span foreground=\"#D50000\">")
+  }
+  else
+  {
+    printf("<span foreground=\"#66BB6A\">")
+  }
 	# full text
-	printf("%.1fG/%.1fG (%.f%)\n", used, total, pct)
+	printf("MEM %.1fG/%.1fG (%.f%)", used, total, pct)
+  printf("</span>")
 
-	# short text
-	printf("%.f%\n", pct)
-
-	# color
-	if (pct > 90) {
-		print("#FF0000\n")
-	} else if (pct > 80) {
-		print("#FFAE00\n")
-	} else if (pct > 70) {
-		print("#FFF600\n")
-	}
 }
 ' /proc/meminfo
