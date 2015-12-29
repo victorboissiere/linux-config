@@ -11,8 +11,6 @@ cp -r ~/.config/terminator softwares/
 # Useful scripts
 cp /bin/lock bash_scripts/
 
-#Others
-cp ~/Documents/config/ascii_bash other/
 
 echo "Config imported!"
 

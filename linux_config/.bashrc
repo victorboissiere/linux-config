@@ -1,19 +1,17 @@
-#My crap
-export NNTPSERVER="news.epita.fr"
+#My configuration
+cat ~/Documents/linux-config/other/ascii_bash
 export EDITOR="vim"
-export PATH=$PATH:/home/victor/prog/programs/clion-1.2.2/bin
-#alias clion="/home/victor/prog/programs/clion-1.2.1/bin/clion.sh"
-alias clion="clion.sh"
-alias phpstorm="sudo /home/victor/prog/programs/PhpStorm-143.382.38/bin/phpstorm.sh"
-alias left="xrandr --output HDMI2 --left-of eDP1"
-alias sl="ls"
-alias pattern="grep -r -n"
-export PS1="\u:\W \$? \\$ \[$(tput sgr0)\]"
-cat ~/Documents/config/ascii_bash
+export NNTPSERVER="news.epita.fr"
 
-# ~/.bashrc: executed by bash(1) for non-login shells.
-# see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
-# for examples
+
+
+
+
+
+
+
+
+
 
 # If not running interactively, don't do anything
 case $- in

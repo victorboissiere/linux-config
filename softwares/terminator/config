@@ -1,12 +1,10 @@
 [global_config]
-  enabled_plugins = LaunchpadCodeURLHandler, APTURLHandler, LaunchpadBugURLHandler
   title_transmit_bg_color = "#000000"
-  inactive_color_offset = 1.0
   title_inactive_bg_color = "#000000"
 [keybindings]
 [profiles]
   [[default]]
-    background_darkness = 0.6
+    background_darkness = 0.73
     background_image = None
     background_type = transparent
 [layouts]
