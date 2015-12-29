@@ -6,3 +6,7 @@ scripts.
 ## Screenshot
 
 ![Screenshot](https://raw.githubusercontent.com/victorboissiere/linux-config/master/screenshots/i3.png)
+
+## Contact
+
+For any comments or suggestions, please email me at contact@tivbroc.com
