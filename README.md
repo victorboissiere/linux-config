@@ -5,4 +5,4 @@ scripts.
 
 ## Screenshot
 
-![Screenshot](https://raw.githubusercontent.com/victorboissiere/screenshots/i3.png)
+![Screenshot](https://raw.githubusercontent.com/victorboissiere/linux-config/master/screenshots/i3.png)
