@@ -9,8 +9,8 @@ ping -c 1 8.8.8.8 >/dev/null 2>&1
 if [ "$?" = 0 ]; then
     ping -c 1 $IP >/dev/null 2>&1
     if [ "$?" = 0 ]; then
-        echo "OK"
+      echo '<span foreground="#66BB6A">SERVER OK</span>'
     else
-        echo "KO. Server not responding"
+      echo '<span foreground="#EF3935">SERVER KO</span>'
     fi
 fi
