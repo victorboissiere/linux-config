@@ -8,6 +8,10 @@ cp ~/.bashrc linux_config/
 cp ~/.vimrc vim/
 cp -r ~/.config/terminator softwares/
 
+# VPN
+cp /bin/vpnon VPN/
+cp /bin/vpnoff VPN/
+
 # Useful scripts
 cp /bin/lock bash_scripts/
 

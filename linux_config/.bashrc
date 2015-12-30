@@ -2,7 +2,7 @@
 cat ~/Documents/linux-config/other/ascii_bash
 export EDITOR="vim"
 export NNTPSERVER="news.epita.fr"
-
+export INTERNET="OK"
 
 
 

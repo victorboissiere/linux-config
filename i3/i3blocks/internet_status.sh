@@ -7,7 +7,7 @@ Green="[0;32m";
 IP='8.8.8.8'
 ping -c 1 $IP >/dev/null 2>&1
 if [ "$?" = 0 ]; then
-    echo '<span foreground="#66BB6A">INTERNET OK</span>'
+  echo -n '<span foreground="#66BB6A">INTERNET OK</span>'
 else
-    echo '<span foreground="#EF3935">INTERNET KO</span>'
+  echo -n '<span foreground="#EF3935">INTERNET KO</span>'
 fi

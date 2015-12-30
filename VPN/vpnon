@@ -1,0 +1,32 @@
+#!/bin/sh
+
+vpnoff
+vpn_path=/etc/openvpn/TCP/FRANCE\(V\)-TCP.ovpn
+
+if [ $# -ge 1 ]; then
+  if [ $1 = "list" ]; then
+    echo "USA-FLORIDA : florida"
+    echo "USA-LOSANGELES : la"
+    echo "USA-NEWYORK : ny"
+    echo "CANADA_QUEBEC : ca"
+    echo "FRANCE : fr"
+    exit 0
+  elif [ $1 = "florida" ]; then
+    vpn_path=/etc/openvpn/TCP/USA-FLORIDA-TCP.ovpn
+  elif [ $1 = "la" ]; then
+    vpn_path=/etc/openvpn/TCP/USA-LOSANGELES-TCP.ovpn
+  elif [ $1 = "ny" ]; then
+    vpn_path=/etc/openvpn/TCP/USA-NEWYORK-TCP.ovpn
+  elif [ $1 = "ca" ]; then
+    vpn_path=/etc/openvpn/TCP/CANADA-QUEBEC-TCP.ovpn
+  elif [ $1 = "fr" ]; then
+    vpn_path=/etc/openvpn/TCP/FRANCE\(V\)-TCP.ovpn
+  else
+    echo "Invalid arguments. Type list to get the list of available vpns."
+    exit 1
+  fi
+else
+  echo "No argument given. Default : FRANCE"
+fi
+
+sudo nohup openvpn --config $vpn_path --script-security 2 >/dev/null 2>&1 &
