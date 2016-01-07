@@ -12,3 +12,4 @@ convert                                                                 \
 
 # Lock screen using i3lock
 i3lock -i /tmp/screenshotblur.png
+notify-send -t 6000 "Master, welcome back!"
