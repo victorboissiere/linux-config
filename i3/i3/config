@@ -47,6 +47,10 @@ bindsym $mod+d exec dmenu_run
 exec --no-startup-id feh --bg-fill ~/Documents/wallpapers/background
 exec --no-startup-id xautolock -time 1 -locker lock
 exec --no-startup-id gnome-settings-daemon
+#kill notify-osd deamon notification
+exec --no-startup-id killall -q notify-osd
+#replace default deamon notification with dunst
+exec --no-startup-id dunst
 
 #CUSTOM rules
 new_window pixel 0
@@ -55,6 +59,7 @@ for_window [instance="terminator"] border 1pixel
 #MY CUSTOM BIND
 bindcode $mod+71 exec xbacklight - 2
 bindcode $mod+72 exec xbacklight + 2
+bindcode $mod+76 exec amixer -D pulse set Master 1+ toggle
 bindcode $mod+95 exec amixer -D pulse sset Master 5%-
 bindcode 122 exec amixer -D pulse sset Master 5%-
 bindcode $mod+96 exec amixer -D pulse sset Master 5%+

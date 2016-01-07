@@ -8,6 +8,13 @@ IP='8.8.8.8'
 ping -c 1 $IP >/dev/null 2>&1
 if [ "$?" = 0 ]; then
   echo -n '<span foreground="#66BB6A">INTERNET OK</span>'
+  echo -n "OK" > internet_state
 else
+  old_state=$(cat internet_state)
+  if [ "$old_state" = "OK" ]; then
+    notify-send -t 3000 -u critical "Master, your internet connection has been lost"
+  fi
+  echo -n "KO" > internet_state
+
   echo -n '<span foreground="#EF3935">INTERNET KO</span>'
 fi

@@ -30,3 +30,4 @@ else
 fi
 
 sudo nohup openvpn --config $vpn_path --script-security 2 >/dev/null 2>&1 &
+notify-send -t 1000 "Master, VPN is on"

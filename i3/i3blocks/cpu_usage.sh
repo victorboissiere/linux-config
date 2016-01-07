@@ -43,19 +43,25 @@ while (<MPSTAT>) {
 close(MPSTAT);
 
 $cpu_usage eq -1 and die 'Cant find CPU information';
+#open FILE, ">>", "cpu_state";
+#binmode FILE;
 
 if ($cpu_usage > 50)
 {
   printf '<span foreground="#F98800">';
+  #print FILE "50";
 }
 elsif ($cpu_usage > 75)
 {
   printf '<span foreground="#D50000">';
+  #print FILE "75";
 }
 else
 {
   printf '<span foreground="#66BB6A">';
+  #print FILE "0";
 }
+#close(FILE);
 
 # Print short_text, full_text
 printf "CPU %.${decimals}f%%", $cpu_usage;
