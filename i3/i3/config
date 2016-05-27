@@ -47,6 +47,8 @@ bindsym $mod+d exec dmenu_run
 exec --no-startup-id feh --bg-fill ~/Documents/wallpapers/background
 exec --no-startup-id xautolock -time 1 -locker lock
 exec --no-startup-id gnome-settings-daemon
+exec --no-startup-id nm-applet
+
 #kill notify-osd deamon notification
 exec --no-startup-id killall -q notify-osd
 #replace default deamon notification with dunst
