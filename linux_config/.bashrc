@@ -3,7 +3,11 @@ cat ~/Documents/linux-config/other/ascii_bash
 export EDITOR="vim"
 export NNTPSERVER="news.epita.fr"
 export INTERNET="OK"
-
+alias open="xdg-open"
+alias laravel="~/.composer/vendor/bin/laravel"
+alias vps_root="ssh root@tivbroc.com"
+alias vps="ssh victorboissiere@tivbroc.com"
+alias phpstorm="/home/victor/Documents/installation/PhpStorm-162.1121.38/bin/phpstorm.sh"
 
 
 

@@ -1,19 +1,21 @@
 [global_config]
-  title_transmit_bg_color = "#000000"
   inactive_color_offset = 1.0
   title_inactive_bg_color = "#000000"
+  title_transmit_bg_color = "#000000"
 [keybindings]
-[profiles]
-  [[default]]
-    background_darkness = 0.73
-    background_image = None
-    background_type = transparent
 [layouts]
   [[default]]
     [[[child1]]]
-      type = Terminal
       parent = window0
+      profile = default
+      type = Terminal
     [[[window0]]]
-      type = Window
       parent = ""
+      type = Window
 [plugins]
+[profiles]
+  [[default]]
+    background_darkness = 0.23
+    background_image = None
+    scrollback_infinite = True
+    scrollback_lines = 30000

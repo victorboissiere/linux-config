@@ -57,6 +57,8 @@ exec --no-startup-id dunst
 #CUSTOM rules
 new_window pixel 0
 for_window [instance="terminator"] border 1pixel
+for_window [window_role="pop-up"] floating enable
+
 
 #MY CUSTOM BIND
 bindcode $mod+71 exec xbacklight - 2
@@ -74,6 +76,7 @@ bindcode $mod+21 exec google-chrome --show-app-list
 bindsym $mod+U [urgent="last"] focus
 bindsym Ctrl+Left workspace prev
 bindsym Ctrl+Right workspace next
+bindcode $mod+75 exec ~/i3blocks/touchpad.sh
 
 
 # change focus
