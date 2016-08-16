@@ -57,7 +57,6 @@ exec --no-startup-id dunst
 #CUSTOM rules
 new_window pixel 0
 for_window [instance="terminator"] border 1pixel
-for_window [window_role="pop-up"] floating enable
 
 
 #MY CUSTOM BIND
@@ -73,6 +72,7 @@ bindcode $mod+34 exec setxkbmap us
 bindcode $mod+35 exec setxkbmap -layout us -variant intl
 bindcode $mod+51 exec google-chrome
 bindcode $mod+21 exec google-chrome --show-app-list
+bindcode $mod+Shift+25 exec python ~/Documents/linux-config/i3/i3blocks/i3-exit.py
 bindsym $mod+U [urgent="last"] focus
 bindsym Ctrl+Left workspace prev
 bindsym Ctrl+Right workspace next
