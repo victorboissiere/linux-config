@@ -1,5 +1,6 @@
 [global_config]
   inactive_color_offset = 1.0
+  title_font = Ubuntu Mono derivative Powerline 9
   title_inactive_bg_color = "#000000"
   title_transmit_bg_color = "#000000"
 [keybindings]

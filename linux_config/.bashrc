@@ -10,6 +10,13 @@ alias vps="ssh victorboissiere@tivbroc.com"
 alias phpstorm="/home/victor/Documents/installation/PhpStorm-162.1121.38/bin/phpstorm.sh"
 alias pa="php artisan"
 alias filemanager="dolphin4"
+[[ -e ~/.phpbrew/bashrc ]] && source ~/.phpbrew/bashrc
+alias oldcomposer="php5.6 $(which composer)"
+alias sym="php5.6 app/console"
+alias symr="sudo chmod -R 777 app"
+alias rapache="sudo service apache2 restart"
+alias enphp5="sudo a2dismod php7.0; sudo a2enmod php5.6; sudo service apache2 restart"
+alias enphp7="sudo a2dismod php5.6; sudo a2enmod php7.0; sudo service apache2 restart"
 
 
 
