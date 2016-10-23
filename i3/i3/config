@@ -74,16 +74,18 @@ bindcode $mod+51 exec google-chrome
 bindcode $mod+21 exec google-chrome --show-app-list
 bindcode $mod+Shift+25 exec python ~/Documents/linux-config/i3/i3blocks/i3-exit.py
 bindsym $mod+U [urgent="last"] focus
-bindsym Ctrl+Left workspace prev
-bindsym Ctrl+Right workspace next
 bindcode $mod+75 exec ~/i3blocks/touchpad.sh
 
-
-# change focus
-bindsym $mod+j focus left
-bindsym $mod+k focus down
-bindsym $mod+l focus up
-bindsym $mod+semicolon focus right
+#  My keyboard layout layout switch
+set $keyboardMode "keyboard f=ff, u=us"
+bindsym $mod+Shift+i mode $keyboardMode
+mode $keyboardMode {
+  bindsym e exec "setxkbmap us", mode "default"
+    bindsym f exec "setxkbmap -layout us -variant intl", mode "default"
+    # back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
@@ -96,12 +98,6 @@ bindsym $mod+Shift+j move left
 bindsym $mod+Shift+k move down
 bindsym $mod+Shift+l move up
 bindsym $mod+Shift+semicolon move right
-
-# alternatively, you can use the cursor keys:
-bindsym $mod+Shift+Left move left
-bindsym $mod+Shift+Down move down
-bindsym $mod+Shift+Up move up
-bindsym $mod+Shift+Right move right
 
 # split in horizontal orientation
 bindsym $mod+h split h
