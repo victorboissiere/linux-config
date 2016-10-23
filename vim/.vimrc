@@ -3,6 +3,10 @@ Plug 'crusoexia/vim-monokai'
 Plug 'altercation/vim-colors-solarized'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'Shougo/vimproc.vim', {'do' : 'make'}
+Plug 'Shougo/unite.vim'
+Plug 'm2mdas/phpcomplete-extended'
+Plug 'm2mdas/phpcomplete-extended-laravel'
 call plug#end()
 
 set laststatus=2
@@ -10,8 +14,10 @@ set laststatus=2
 " Better be safe than sorry
 set nocompatible
 
+" Indentation settings
 set tabstop=2
 set autoindent
+set shiftwidth=2
 
 " space instead of tabs
 set expandtab
@@ -22,6 +28,7 @@ set showmatch
 " Line numbers
 set number
 
+" Theme
 syntax enable
 let g:solarized_termcolors=256
 colorscheme solarized
@@ -41,3 +48,6 @@ autocmd FileType make set noexpandtab shiftwidth=8 softtabstop=0
 " Smart numbers
 set relativenumber
 set number
+
+" Configure phpcomplete
+autocmd FileType php set omnifunc=phpcomplete#CompletePHP
