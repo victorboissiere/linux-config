@@ -49,5 +49,16 @@ autocmd FileType make set noexpandtab shiftwidth=8 softtabstop=0
 set relativenumber
 set number
 
+" Search settings
+set hlsearch
+set ignorecase
+set smartcase
+
 " Configure phpcomplete
 autocmd FileType php set omnifunc=phpcomplete#CompletePHP
+
+" Custom binding
+noremap ; l
+noremap l k
+noremap k j
+noremap j h

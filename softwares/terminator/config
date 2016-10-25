@@ -16,7 +16,9 @@
 [plugins]
 [profiles]
   [[default]]
-    background_darkness = 0.23
+    background_darkness = 0.78
     background_image = None
-    scrollback_infinite = True
+    background_type = transparent
+    font = Monospace 11
     scrollback_lines = 30000
+    use_system_font = False
