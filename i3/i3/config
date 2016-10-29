@@ -1,7 +1,8 @@
 # Window key as super
-set $mod Mod4
+set $mod Mod1
 
 font pango:System San Fransisco Display 9
+
 # thin borders
 hide_edge_borders both
 
@@ -52,38 +53,41 @@ bindsym $mod+a focus parent
 set $workspace1 "1: Web "
 set $workspace2 "2: Editor "
 set $workspace3 "3: Terminal "
+set $workspace4 "4"
+set $workspace5 "5"
+set $workspace6 "6"
+set $workspace7 "7"
+set $workspace8 "R"
+set $workspace9 "L"
 set $workspace10 "10: Music "
 
 # switch to workspace
 bindsym $mod+1 workspace $workspace1
 bindsym $mod+2 workspace $workspace2
 bindsym $mod+3 workspace $workspace3
-bindsym $mod+4 workspace 4
-bindsym $mod+5 workspace 5
-bindsym $mod+6 workspace 6
-bindsym $mod+7 workspace 7
-bindsym $mod+8 workspace 8
-bindsym $mod+9 workspace 9
+bindsym $mod+4 workspace $workspace4
+bindsym $mod+5 workspace $workspace5
+bindsym $mod+6 workspace $workspace6
+bindsym $mod+7 workspace $workspace7
+bindsym $mod+9 workspace $workspace9
 bindsym $mod+0 workspace $workspace10
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace $workspace1
 bindsym $mod+Shift+2 move container to workspace $workspace2
 bindsym $mod+Shift+3 move container to workspace $workspace3
-bindsym $mod+Shift+4 move container to workspace 4
-bindsym $mod+Shift+5 move container to workspace 5
-bindsym $mod+Shift+6 move container to workspace 6
-bindsym $mod+Shift+7 move container to workspace 7
-bindsym $mod+Shift+8 move container to workspace 8
-bindsym $mod+Shift+9 move container to workspace 9
+bindsym $mod+Shift+4 move container to workspace $workspace4
+bindsym $mod+Shift+5 move container to workspace $workspace5
+bindsym $mod+Shift+6 move container to workspace $workspace6
+bindsym $mod+Shift+7 move container to workspace $workspace7
+bindsym $mod+Shift+8 move container to workspace $workspace8
+bindsym $mod+Shift+9 move container to workspace $workspace9
 bindsym $mod+Shift+0 move container to workspace $workspace10
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
-# exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -105,14 +109,6 @@ bar {
     }
 }
 
-#CUSTOM start up applications
-exec --no-startup-id feh --bg-fill ~/Documents/wallpapers/background
-
-#kill notify-osd deamon notification
-exec --no-startup-id killall -q notify-osd
-#replace default deamon notification with dunst
-exec --no-startup-id dunst
-
 #MY CUSTOM BIND
 bindcode $mod+71 exec xbacklight - 2
 bindcode $mod+72 exec xbacklight + 2
@@ -122,8 +118,6 @@ bindcode 122 exec amixer -D pulse sset Master 5%-
 bindcode $mod+96 exec amixer -D pulse sset Master 5%+
 bindcode 123 exec amixer -D pulse sset Master 5%+
 bindcode $mod+67 exec lock
-bindcode $mod+34 exec setxkbmap us
-bindcode $mod+35 exec setxkbmap -layout us -variant intl
 bindcode $mod+Shift+25 exec python ~/Documents/linux-config/i3/i3blocks/i3-exit.py
 bindcode $mod+75 exec ~/i3blocks/touchpad.sh
 
@@ -139,11 +133,11 @@ client.unfocused        $inactive-bg-color $inactive-bg-color $inactive-text-col
 client.focused_inactive $inactive-bg-color $inactive-bg-color $inactive-text-color  #00ff00
 client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color          #00ff00
 
-# Replace dmenu by rofi
-bindsym $mod+d exec rofi -show run -lines 3 -eh 2 -width 100 -padding 470 -opacity "85" -bw 0 -bc "$bg-color" -bg "$bg-color" -fg "$text-color" -hlbg "$bg-color" -hlfg "#9575cd"
-
 # Transpency fix for rofi
 exec --no-startup-id compton
+
+# Replace dmenu by rofi
+bindsym $mod+d exec rofi -show run -lines 10 -eh 2 -width 100 -padding 340 -opacity "85" -bw 0 -bc "$bg-color" -bg "$bg-color" -fg "$text-color" -hlbg "$bg-color" -hlfg "#9575cd"
 
 # Keys
 exec_always xmodmap -e "clear lock" #disable caps lock switch
@@ -160,6 +154,31 @@ exec shutter --min_at_startup
 exec --no-startup-id spotify
 exec --no-startup-id google-chrome
 
+# Monitors (Warning: also contains feh for background)
+exec ~/.screenlayout/my_randr_monitors_config.sh
+
+# Default monitors
+set $defaultMonitor "eDP1"
+set $rightMonitor "VGA1"
+set $leftMonitor "HDMI1"
+
+# workspace default monitors
+workspace $workspace1 output $defaultMonitor
+workspace $workspace2 output $defaultMonitor
+workspace $workspace3 output $defaultMonitor
+workspace $workspace4 output $defaultMonitor
+workspace $workspace5 output $defaultMonitor
+workspace $workspace6 output $defaultMonitor
+workspace $workspace7 output $defaultMonitor
+workspace $workspace10 output $defaultMonitor
+
+# Move focused workspace to monitor
+bindsym Shift+$mod+bracketleft move workspace to output left
+bindsym Shift+$mod+bracketright move workspace to output right
+bindsym $mod+o workspace $workspace8
+bindsym $mod+i workspace $workspace9
+bindsym $mod+bracketleft move container to output left
+bindsym $mod+bracketright move container to right
 
 #  My keyboard layout layout switch
 set $keyboardMode "keyboard e=english, i=english international"
@@ -175,7 +194,13 @@ mode $keyboardMode {
 new_window pixel 0
 for_window [title="Hangouts"] floating enable
 for_window [title="Hangouts"] hide_edge_borders none
+for_window [title="Hangouts"] move to workspace $workspace5
 
 for_window [class="Spotify"] move to workspace $workspace10
 for_window [class="Google-chrome"] move to workspace $workspace1
 for_window [instance="terminator"] border 1pixel
+
+#kill notify-osd deamon notification
+exec --no-startup-id killall -q notify-osd
+#replace default deamon notification with dunst
+exec --no-startup-id dunst
