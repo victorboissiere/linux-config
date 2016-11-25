@@ -9,4 +9,4 @@ scripts.
 
 ## Contact
 
-For any comments or suggestions, please email me at contact@tivbroc.com
+For any comments or suggestions, please email me at contact@gitcommit.fr
