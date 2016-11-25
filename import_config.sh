@@ -6,6 +6,7 @@ cp ~/.bashrc linux_config/
 
 # Soft
 cp ~/.vimrc vim/
+cp -r ~/.vim/snippets vim/snippets
 cp -r ~/.config/terminator softwares/
 
 # VPN
