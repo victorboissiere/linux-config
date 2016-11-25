@@ -181,7 +181,7 @@ bindsym $mod+bracketleft move container to output left
 bindsym $mod+bracketright move container to right
 
 #  My keyboard layout layout switch
-set $keyboardMode "keyboard e=english, i=english international"
+set $keyboardMode "keyboard e=english, f=english international"
 bindsym $mod+Shift+i mode $keyboardMode
 mode $keyboardMode {
     bindsym e exec "setxkbmap us", mode "default"
