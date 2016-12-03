@@ -14,6 +14,9 @@ cp /bin/lock bash_scripts/
 # Zsh
 cp ~/.zshrc zsh/
 
+# Git
+cp ~/.gitconfig git/
+
 
 echo "Config imported!"
 

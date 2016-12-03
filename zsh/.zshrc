@@ -52,8 +52,20 @@ alias zshrc='vim ~/.zshrc'
 alias vimrc='vim ~/.vimrc'
 alias i3config='vim ~/.i3/config'
 
-# Reload config file
-alias refreshzsh='source ~/.zshrc'
+# Source ZSH config file
+alias szrc='source ~/.zshrc'
+
+# =========================================  Navigation  ======================================
+
+alias ~='cd ~'
+
+# ========================================  Installation  =====================================
+
+alias apt-i='sudo apt-get install'
+alias apt-u='sudo apt-get update'
+alias apt-r='sudo apt-get remove'
+alias apt-U='sudo apt-get upgrade'
+alias apt-uU='sudo apt-get update && sudo apt-get upgrade'
 
 # =========================================     Utils     ======================================
 
@@ -62,6 +74,9 @@ alias copy='xclip -sel clip'
 
 # Mac like open
 alias open="xdg-open"
+
+# Sudo shortcut
+alias s='sudo'
 
 # =========================================      FUN      ======================================
 
