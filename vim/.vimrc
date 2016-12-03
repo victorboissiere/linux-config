@@ -6,6 +6,9 @@ Plug 'scrooloose/nerdtree'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'msanders/snipmate.vim'
 Plug 'tpope/vim-surround'
+Plug 'trevordmiller/nova-vim'
+Plug 'joshdick/onedark.vim'
+Plug 'PotatoesMaster/i3-vim-syntax'
 call plug#end()
 
 "---------------Misc----------------------"
@@ -39,12 +42,10 @@ set relativenumber
 syntax enable
 
 " Enable 256 colors. Terminal vim
-let g:solarized_termcolors=256
 set t_Co=256
 
 " Theme
-colorscheme solarized
-set background=dark
+colorscheme onedark
 
 " Highlight trailing white space end of line
 :highlight ExtraWhiteSpace ctermbg=red guibg=red
@@ -55,9 +56,13 @@ call matchadd('ExtraWhiteSpace', '\s\+$')
 " Highlight search. See mappings to disable highlighting when search is done
 set hlsearch
 
+" Search parameters
 set ignorecase
 set smartcase
 set incsearch
+
+" Shell search to ignore case sensitivty
+set wildignorecase
 
 
 "----------------Remapping-----------------"
@@ -96,6 +101,9 @@ nmap <Leader>k :bd<cr>
 
 " Edit snippets
 nmap <Leader>es :e ~/.vim/snippets/
+
+" Create pdf Markdown
+nmap <Leader>m :!pandoc %:p -o /tmp/document.pdf -s -N && google-chrome /tmp/document.pdf  > /dev/null 2>&1 &<cr>
 
 "---------------Auto-Commands-------------"
 
