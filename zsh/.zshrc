@@ -48,7 +48,7 @@ alias gitst="git status"
 # ========================================= Config files ======================================
 
 # Shortcut to config files
-alias zshrc='vim ~/.zshrc'
+alias zrc='vim ~/.zshrc'
 alias vimrc='vim ~/.vimrc'
 alias i3config='vim ~/.i3/config'
 
@@ -62,10 +62,8 @@ alias ~='cd ~'
 # ========================================  Installation  =====================================
 
 alias apt-i='sudo apt-get install'
-alias apt-u='sudo apt-get update'
 alias apt-r='sudo apt-get remove'
-alias apt-U='sudo apt-get upgrade'
-alias apt-uU='sudo apt-get update && sudo apt-get upgrade'
+alias update='sudo apt-get update && sudo apt-get upgrade'
 
 # =========================================     Utils     ======================================
 
@@ -77,6 +75,15 @@ alias open="xdg-open"
 
 # Sudo shortcut
 alias s='sudo'
+
+# Become root
+alias root='sudo -i'
+
+# Google-chrome
+alias chrome='google-chrome'
+
+# Number of commits
+alias nbc='git log --oneline | wc -l'
 
 # =========================================      FUN      ======================================
 
