@@ -1,3 +1,14 @@
+# =========================================      ZSH      ======================================
+
+# Path to your oh-my-zsh installation.
+export ZSH=/home/victor/.oh-my-zsh
+
+ZSH_THEME="robbyrussell"
+
+plugins=(git)
+
+source $ZSH/oh-my-zsh.sh
+
 # =========================================    Global   ======================================
 
 # Ascii art when opening new terminal
@@ -51,17 +62,6 @@ alias copy='xclip -sel clip'
 
 # Mac like open
 alias open="xdg-open"
-
-# =========================================      ZSH      ======================================
-
-source $ZSH/oh-my-zsh.sh
-
-# Path to your oh-my-zsh installation.
-export ZSH=/home/victor/.oh-my-zsh
-
-ZSH_THEME="robbyrussell"
-
-plugins=(git)
 
 # =========================================      FUN      ======================================
 
