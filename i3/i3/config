@@ -200,6 +200,9 @@ for_window [class="Spotify"] move to workspace $workspace10
 for_window [class="Google-chrome"] move to workspace $workspace1
 for_window [instance="terminator"] border 1pixel
 
+# Applications
+bindsym Print exec sh ~/Documents/gitpull/screen_capture.sh
+
 #kill notify-osd deamon notification
 exec --no-startup-id killall -q notify-osd
 #replace default deamon notification with dunst
