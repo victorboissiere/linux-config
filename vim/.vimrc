@@ -103,7 +103,7 @@ nmap <Leader>k :bd<cr>
 nmap <Leader>es :e ~/.vim/snippets/
 
 " Create pdf Markdown
-nmap <Leader>m :!pandoc %:p -o /tmp/document.pdf -s -N && google-chrome /tmp/document.pdf  > /dev/null 2>&1 &<cr>
+nmap <Leader>m :!pandoc %:p -o /tmp/document.pdf -s -N && zathura /tmp/document.pdf  > /dev/null 2>&1 &<cr>
 
 "---------------Auto-Commands-------------"
 

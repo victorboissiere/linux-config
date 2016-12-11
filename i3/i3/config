@@ -91,12 +91,12 @@ bindsym $mod+Shift+r restart
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
-        bindsym j resize shrink width 10 px or 10 ppt
-        bindsym k resize grow height 10 px or 10 ppt
-        bindsym l resize shrink height 10 px or 10 ppt
-        bindsym semicolon resize grow width 10 px or 10 ppt
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
+  bindsym j resize shrink width 10 px or 10 ppt
+  bindsym k resize grow height 10 px or 10 ppt
+  bindsym l resize shrink height 10 px or 10 ppt
+  bindsym semicolon resize grow width 10 px or 10 ppt
+  bindsym Return mode "default"
+  bindsym Escape mode "default"
 }
 
 bindsym $mod+r mode "resize"
@@ -105,7 +105,7 @@ bar {
   status_command i3blocks -c ~/i3blocks/i3blocks.conf
     position top
     colors {
-        focused_workspace  $bg-color  $text-color
+      focused_workspace  $bg-color  $text-color
     }
 }
 
@@ -184,10 +184,10 @@ bindsym $mod+bracketright move container to right
 set $keyboardMode "keyboard e=english, f=english international"
 bindsym $mod+Shift+i mode $keyboardMode
 mode $keyboardMode {
-    bindsym e exec "setxkbmap us", mode "default"
-    bindsym f exec "setxkbmap -layout us -variant intl", mode "default"
-    bindsym Return mode "default"
-    bindsym Escape mode "default"
+  bindsym e exec "setxkbmap us", mode "default"
+  bindsym f exec "setxkbmap -layout us -variant intl", mode "default"
+  bindsym Return mode "default"
+  bindsym Escape mode "default"
 }
 
 # Custom software settings

@@ -7,6 +7,7 @@ cp -r ~/i3blocks i3/
 cp ~/.vimrc vim/
 cp -r ~/.vim/snippets vim/snippets
 cp -r ~/.config/terminator softwares/
+cp -r ~/.config/zathura softwares/
 
 # Useful scripts
 cp /bin/lock bash_scripts/
