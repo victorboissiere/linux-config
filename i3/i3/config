@@ -118,8 +118,10 @@ bindcode 122 exec amixer -D pulse sset Master 5%-
 bindcode $mod+96 exec amixer -D pulse sset Master 5%+
 bindcode 123 exec amixer -D pulse sset Master 5%+
 bindcode $mod+67 exec lock
-bindcode $mod+Shift+25 exec python ~/Documents/linux-config/i3/i3blocks/i3-exit.py
 bindcode $mod+75 exec ~/i3blocks/touchpad.sh
+
+# Window to logout/suspend/shutdown/reboot
+bindsym $mod+Shift+w exec python ~/Documents/linux-config/i3/i3blocks/i3-exit.py
 
 set $bg-color            #2f343f
 set $inactive-bg-color   #2f343f
