@@ -11,14 +11,17 @@ Plug 'joshdick/onedark.vim'
 Plug 'PotatoesMaster/i3-vim-syntax'
 call plug#end()
 
-"---------------Misc----------------------"
+"-- MISC --"
+""""""""""""
+
 " Bottom bar
 set laststatus=2
 
 " Better be safe than sorry
 set nocompatible
 
-"--------------Editor---------------------"
+"-- EDITOR --"
+""""""""""""""
 
 " Indentation settings
 set tabstop=2
@@ -37,7 +40,8 @@ set number
 " Smart numbers
 set relativenumber
 
-"----------------Visuals-------------------"
+"-- VISUAL --"
+""""""""""""""
 
 syntax enable
 
@@ -51,7 +55,8 @@ colorscheme onedark
 :highlight ExtraWhiteSpace ctermbg=red guibg=red
 call matchadd('ExtraWhiteSpace', '\s\+$')
 
-"----------------Search--------------------"
+"-- SEARCH --"
+""""""""""""""
 
 " Highlight search. See mappings to disable highlighting when search is done
 set hlsearch
@@ -65,7 +70,8 @@ set incsearch
 set wildignorecase
 
 
-"----------------Remapping-----------------"
+"-- REMAPPING --"
+"""""""""""""""""
 
 " Replace default hjkl with jkl; for better finger position
 noremap ; l
@@ -73,8 +79,9 @@ noremap l k
 noremap k j
 noremap j h
 
-"----------------Mappings------------------"
-"
+"-- MAPPINGS --"
+""""""""""""""""
+
 " Override default Leader with the ',' key
 let mapleader = ','
 
@@ -105,7 +112,9 @@ nmap <Leader>es :e ~/.vim/snippets/
 " Create pdf Markdown
 nmap <Leader>m :!pandoc %:p -o /tmp/document.pdf -s -N && zathura /tmp/document.pdf  > /dev/null 2>&1 &<cr>
 
-"---------------Auto-Commands-------------"
+
+"-- AUTO COMMANDS --"
+"""""""""""""""""""""
 
 " Disable expandtab for Makefile files
 autocmd FileType make set noexpandtab shiftwidth=8 softtabstop=0
@@ -116,7 +125,8 @@ augroup autosourcing
   autocmd BufWritePost .vimrc source %
 augroup END
 
-"------------Split management------------"
+"-- SPLIT MANAGMENT --"
+"""""""""""""""""""""""
 
 " Default split position
 set splitbelow
@@ -129,7 +139,8 @@ nmap zl <C-W><C-K>
 nmap z; <C-W><C-L>
 
 
-"------------Plugins---------------------"
+"-- PLUGINS --"
+"""""""""""""""
 
 "/
 "/ CtrlP

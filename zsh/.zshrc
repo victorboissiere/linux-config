@@ -1,4 +1,5 @@
-# =========================================      ZSH      ======================================
+#-- ZSH --#
+###########
 
 # Path to your oh-my-zsh installation.
 export ZSH=/home/victor/.oh-my-zsh
@@ -9,7 +10,8 @@ plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
-# =========================================    Global   ======================================
+#-- GLOBAL --#
+##############
 
 # Ascii art when opening new terminal
 cat ~/Documents/linux-config/other/ascii_bash
@@ -21,12 +23,14 @@ export NNTPSERVER="news.epita.fr"
 # i3blocks script for internet
 export INTERNET="OK"
 
-# =========================================   Websites  ======================================
+#-- WEBSITES --#
+################
 
 # VPS
 alias vps="ssh victorboissiere@tivbroc.com"
 
-# =========================================     Dev     ======================================
+#-- DEV --#
+###########
 
 # PHPSTORM
 alias phpstorm="/home/victor/Documents/installation/PhpStorm-162.1121.38/bin/phpstorm.sh"
@@ -34,7 +38,8 @@ alias phpstorm="/home/victor/Documents/installation/PhpStorm-162.1121.38/bin/php
 # Reload Apache
 alias rapache="sudo service apache2 restart"
 
-# =========================================   Laravel   ======================================
+#-- LARAVEL --#
+###############
 
 # Create new Laravel project
 alias laravel="~/.composer/vendor/bin/laravel"
@@ -43,12 +48,14 @@ alias laravel="~/.composer/vendor/bin/laravel"
 alias pa="php artisan"
 
 
-# =========================================     Git     ======================================
+#-- GIT --#
+###########
 
 # Git aliases
 alias gitst="git status"
 
-# ========================================= Config files ======================================
+#-- CONFIG FILES --#
+####################
 
 # Shortcut to config files
 alias zrc='vim ~/.zshrc'
@@ -61,19 +68,23 @@ alias szrc='source ~/.zshrc'
 # Personal help
 alias my-help='node ~/prog/personal/i3-help/src/index.js'
 
-# =========================================  Navigation  ======================================
+#-- NAVIGATION --#
+##################
 
 # No need for cd
 alias ~='cd ~'
 
-# ========================================  Installation  =====================================
+#-- INSTALLATION --#
+####################
 
 # Apt-get package manager
 alias apt-i='sudo apt-get install'
 alias apt-r='sudo apt-get remove'
 alias update='sudo apt-get update && sudo apt-get upgrade'
+alias autoremove='sudo apt autoremove'
 
-# =========================================     Utils     ======================================
+#-- UTILS --#
+#############
 
 # Copy register
 alias copy='xclip -sel clip'
@@ -93,7 +104,13 @@ alias chrome='google-chrome'
 # Number of commits
 alias nbc='git log --oneline | wc -l'
 
-# =========================================      FUN      ======================================
+# Color managment
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
+
+#-- FUN --#
+###########
 
 # Fix command line
 eval "$(thefuck --alias)"

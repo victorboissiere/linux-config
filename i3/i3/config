@@ -1,5 +1,6 @@
-# Window key as super
+# Alt key as super
 set $mod Mod1
+set $win Mod4
 
 font pango:System San Fransisco Display 9
 
@@ -90,7 +91,7 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 
 # resize window (you can also use the mouse for that)
-mode "resize" {
+mode "  " {
   bindsym j resize shrink width 10 px or 10 ppt
   bindsym k resize grow height 10 px or 10 ppt
   bindsym l resize shrink height 10 px or 10 ppt
@@ -99,13 +100,23 @@ mode "resize" {
   bindsym Escape mode "default"
 }
 
-bindsym $mod+r mode "resize"
+bindsym $mod+r mode "  "
 
 bar {
   status_command i3blocks -c ~/i3blocks/i3blocks.conf
     position top
+    strip_workspace_numbers yes
+    separator_symbol        "·"
+    workspace_buttons       yes
     colors {
-      focused_workspace  $bg-color  $text-color
+      background  #212121
+      statusline  #DDDDDD
+      separator   #666666
+      # class             border  backgr. text
+      focused_workspace   #2B83A6 #2B83A6 #FFFFFF
+      active_workspace    #212121 #212121 #FFFFFF
+      inactive_workspace  #212121 #212121 #888888
+      urgent_workspace    #2F343A #D64E4E #FFFFFF
     }
 }
 
@@ -144,6 +155,7 @@ client.focused          $bg-color           $bg-color          $text-color      
 client.unfocused        $inactive-bg-color $inactive-bg-color $inactive-text-color  #00ff00
 client.focused_inactive $inactive-bg-color $inactive-bg-color $inactive-text-color  #00ff00
 client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color          #00ff00
+
 
 # Transpency fix for rofi
 exec --no-startup-id compton
@@ -214,6 +226,14 @@ for_window [title="Skype"] move to workspace $workspace5
 for_window [title="Hangouts"] move to workspace $workspace5
 for_window [class="Spotify"] move to workspace $workspace10
 
+# Set website shortcuts
+bindsym $win+f exec google-chrome facebook.com
+bindsym $win+y exec google-chrome youtube.com
+bindsym $win+r exec google-chrome inoreader.com
+bindsym $win+n exec google-chrome netflix.com
+bindsym $win+m exec google-chrome messenger.com
+bindsym $win+i exec google-chrome inbox.google.com
+
 # Applications
 bindsym Print exec sh ~/Documents/gitpull/screen_capture.sh
 
@@ -223,3 +243,5 @@ exec --no-startup-id killall -q notify-osd
 exec --no-startup-id dunst
 # Wifi menu in top bar
 exec --no-startup-id nm-applet
+# Auto lock
+exec --no-startup-id xautolock -time 10 -locker "lock"
