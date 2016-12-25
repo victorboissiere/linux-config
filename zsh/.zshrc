@@ -28,6 +28,7 @@ alias vps="ssh victorboissiere@tivbroc.com"
 
 # =========================================     Dev     ======================================
 
+# PHPSTORM
 alias phpstorm="/home/victor/Documents/installation/PhpStorm-162.1121.38/bin/phpstorm.sh"
 
 # Reload Apache
@@ -38,11 +39,13 @@ alias rapache="sudo service apache2 restart"
 # Create new Laravel project
 alias laravel="~/.composer/vendor/bin/laravel"
 
+# Php artisan (Laravel)
 alias pa="php artisan"
 
 
 # =========================================     Git     ======================================
 
+# Git aliases
 alias gitst="git status"
 
 # ========================================= Config files ======================================
@@ -55,12 +58,17 @@ alias i3config='vim ~/.i3/config'
 # Source ZSH config file
 alias szrc='source ~/.zshrc'
 
+# Personal help
+alias my-help='node ~/prog/personal/i3-help/src/index.js'
+
 # =========================================  Navigation  ======================================
 
+# No need for cd
 alias ~='cd ~'
 
 # ========================================  Installation  =====================================
 
+# Apt-get package manager
 alias apt-i='sudo apt-get install'
 alias apt-r='sudo apt-get remove'
 alias update='sudo apt-get update && sudo apt-get upgrade'

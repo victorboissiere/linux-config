@@ -50,16 +50,16 @@ bindsym $mod+space focus mode_toggle
 # focus the parent container
 bindsym $mod+a focus parent
 
-set $workspace1 "1: Web "
-set $workspace2 "2: Editor "
-set $workspace3 "3: Terminal "
-set $workspace4 "4"
-set $workspace5 "5"
+set $workspace1 "1:"
+set $workspace2 "2:"
+set $workspace3 "3:"
+set $workspace4 "4:"
+set $workspace5 "5:"
 set $workspace6 "6"
 set $workspace7 "7"
-set $workspace8 "R"
-set $workspace9 "L"
-set $workspace10 "10: Music "
+set $workspace8 "8"
+set $workspace9 "9"
+set $workspace10 "10:"
 
 # switch to workspace
 bindsym $mod+1 workspace $workspace1
@@ -110,14 +110,24 @@ bar {
 }
 
 #MY CUSTOM BIND
+
+# Increase luminosity
 bindcode $mod+71 exec xbacklight - 2
+# Decrase luminosity
 bindcode $mod+72 exec xbacklight + 2
+# Toggle volume
 bindcode $mod+76 exec amixer -D pulse set Master 1+ toggle
+# Decrease volume
 bindcode $mod+95 exec amixer -D pulse sset Master 5%-
+# Decrease volume
 bindcode 122 exec amixer -D pulse sset Master 5%-
+# Increase volume
 bindcode $mod+96 exec amixer -D pulse sset Master 5%+
+# Increase volume
 bindcode 123 exec amixer -D pulse sset Master 5%+
+# Lock
 bindcode $mod+67 exec lock
+# Toggle touchpad
 bindcode $mod+75 exec ~/i3blocks/touchpad.sh
 
 # Window to logout/suspend/shutdown/reboot
@@ -177,8 +187,6 @@ workspace $workspace10 output $defaultMonitor
 # Move focused workspace to monitor
 bindsym Shift+$mod+bracketleft move workspace to output left
 bindsym Shift+$mod+bracketright move workspace to output right
-bindsym $mod+o workspace $workspace8
-bindsym $mod+i workspace $workspace9
 bindsym $mod+bracketleft move container to output left
 bindsym $mod+bracketright move container to right
 
@@ -196,11 +204,15 @@ mode $keyboardMode {
 new_window pixel 0
 for_window [title="Hangouts"] floating enable
 for_window [title="Hangouts"] hide_edge_borders none
-for_window [title="Hangouts"] move to workspace $workspace5
 
-for_window [class="Spotify"] move to workspace $workspace10
-for_window [class="Google-chrome"] move to workspace $workspace1
 for_window [instance="terminator"] border 1pixel
+
+# Custom software workspace assignment
+for_window [class="Google-chrome"] move to workspace $workspace1
+for_window [title="Thunar"] move to workspace $workspace4
+for_window [title="Skype"] move to workspace $workspace5
+for_window [title="Hangouts"] move to workspace $workspace5
+for_window [class="Spotify"] move to workspace $workspace10
 
 # Applications
 bindsym Print exec sh ~/Documents/gitpull/screen_capture.sh
@@ -209,3 +221,5 @@ bindsym Print exec sh ~/Documents/gitpull/screen_capture.sh
 exec --no-startup-id killall -q notify-osd
 #replace default deamon notification with dunst
 exec --no-startup-id dunst
+# Wifi menu in top bar
+exec --no-startup-id nm-applet
