@@ -176,6 +176,7 @@ exec ~/i3blocks/touchpad.sh
 # Startup
 exec shutter --min_at_startup
 exec --no-startup-id spotify
+exec --no-startup-id slack
 exec --no-startup-id google-chrome
 
 # Monitors (Warning: also contains feh for background)
@@ -214,8 +215,6 @@ mode $keyboardMode {
 
 # Custom software settings
 new_window pixel 0
-for_window [title="Hangouts"] floating enable
-for_window [title="Hangouts"] hide_edge_borders none
 
 for_window [instance="terminator"] border 1pixel
 
@@ -223,7 +222,7 @@ for_window [instance="terminator"] border 1pixel
 for_window [class="Google-chrome"] move to workspace $workspace1
 for_window [title="Thunar"] move to workspace $workspace4
 for_window [title="Skype"] move to workspace $workspace5
-for_window [title="Hangouts"] move to workspace $workspace5
+for_window [title="Slack"] move to workspace $workspace5
 for_window [class="Spotify"] move to workspace $workspace10
 
 # Set website shortcuts
@@ -244,4 +243,4 @@ exec --no-startup-id dunst
 # Wifi menu in top bar
 exec --no-startup-id nm-applet
 # Auto lock
-exec --no-startup-id xautolock -time 10 -locker "lock"
+# exec --no-startup-id xautolock -time 10 -locker "lock"

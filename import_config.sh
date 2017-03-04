@@ -8,6 +8,7 @@ cp ~/.vimrc vim/
 cp -r ~/.vim/snippets vim/snippets
 cp -r ~/.config/terminator softwares/
 cp -r ~/.config/zathura softwares/
+cp -r ~/.config/ranger softwares/
 
 # Useful scripts
 cp /bin/lock bash_scripts/

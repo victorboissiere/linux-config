@@ -4,11 +4,20 @@
 # Path to your oh-my-zsh installation.
 export ZSH=/home/victor/.oh-my-zsh
 
+# Disable composer xdebug warning for performance issue
+export COMPOSER_DISABLE_XDEBUG_WARN=false
+
 ZSH_THEME="robbyrussell"
 
 plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
+
+#-- TMP --#
+##############
+alias backend='cd /var/www/checkMail-backend'
+alias frontend='cd /var/www/checkMail-frontend'
+alias doc='cd ~/prog/mti/checkmail-doc'
 
 #-- GLOBAL --#
 ##############
@@ -32,9 +41,6 @@ alias vps="ssh victorboissiere@tivbroc.com"
 #-- DEV --#
 ###########
 
-# PHPSTORM
-alias phpstorm="/home/victor/Documents/installation/PhpStorm-162.1121.38/bin/phpstorm.sh"
-
 # Reload Apache
 alias rapache="sudo service apache2 restart"
 
@@ -52,7 +58,12 @@ alias pa="php artisan"
 ###########
 
 # Git aliases
-alias gitst="git status"
+alias gs="git status"
+alias ga="git add"
+alias gaa="git add --all"
+alias gc="git commit -m "
+alias gp="git push"
+alias nah="git reset --hard HEAD"
 
 #-- CONFIG FILES --#
 ####################
@@ -66,7 +77,7 @@ alias i3config='vim ~/.i3/config'
 alias szrc='source ~/.zshrc'
 
 # Personal help
-alias my-help='node ~/prog/personal/i3-help/src/index.js'
+alias my-help='babel-node ~/prog/personal/dotfiles-help/src/index.js'
 
 #-- NAVIGATION --#
 ##################
@@ -109,6 +120,15 @@ alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 
+
+#-- COMPOSER --#
+################
+
+c()
+{
+  composer $1
+}
+
 #-- FUN --#
 ###########
 
@@ -116,3 +136,6 @@ alias egrep='egrep --color=auto'
 eval "$(thefuck --alias)"
 
 
+
+# added by travis gem
+[ -f /home/victor/.travis/travis.sh ] && source /home/victor/.travis/travis.sh
