@@ -1,0 +1,14 @@
+vim
+git
+zsh
+curl
+i3
+i3block
+shutter
+nodejs
+npm
+dunst
+compton
+terminator
+ranger
+zathura
