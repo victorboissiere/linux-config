@@ -48,9 +48,4 @@ cp -r linux-config/i3/i3blocks ~/i3blocks
 
 echo 'VIM'
 
-curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
-    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-
-echo 'LINK GITHUB CONFIG TO CURRENT INSTALLATION'
-
-
+./linux-config/setup/categories/linux.sh
