@@ -1,15 +1,15 @@
 #!/bin/sh
 
-rm -rf /tmp/setup
-mkdir /tmp/setup && cd /tmp/setup && sudo apt-get update && sudo apt-get upgrade -y;
+sudo apt-get update && sudo apt-get upgrade -y;
 
 install_packages=''
 
-for package in `cat ./linux-config/setup/packages.txt`; do
+for package in `cat packages.txt`; do
   install_packages="$install_packages $package"
 done
 
-sudo apt-get install -y $install_packages
+rm -rf /tmp/setup
+mkdir /tmp/setup && cd /tmp/setup && sudo apt-get install -y $install_packages
 
 git clone https://github.com/victorboissiere/linux-config
 git clone https://github.com/victorboissiere/linux-config ~/Documents/linux-config

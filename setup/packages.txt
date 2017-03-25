@@ -20,3 +20,4 @@ python3-pip
 fonts-font-awesome
 rofi
 scrot
+php
