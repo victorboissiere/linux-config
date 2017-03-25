@@ -32,10 +32,6 @@ echo 'INTERNET'
 ./linux-config/setup/categories/internet.sh
 
 
-echo 'TERMINAL'
-
-./linux-config/setup/categories/terminal.sh
-
 
 echo 'GIT'
 
@@ -47,4 +43,9 @@ echo 'I3'
 
 echo 'VIM'
 
-./linux-config/setup/categories/linux.sh
+./linux-config/setup/categories/vim.sh
+
+echo 'TERMINAL'
+
+./linux-config/setup/categories/terminal.sh
+
