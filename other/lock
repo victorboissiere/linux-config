@@ -1,0 +1,15 @@
+#!/bin/bash
+
+# Take screenshot
+scrot /tmp/screenshot.png
+
+# Blur image and add text
+convert                                                                 \
+-pointsize 60 -blur 0x5                                                 \
+-fill 'RGBA(0, 0, 0, 0.4)' -draw "rectangle 570,670,1350,785"           \
+-gravity center -fill white -annotate +0+190 "Type password to unlock"  \
+/tmp/screenshot.png  /tmp/screenshotblur.png
+
+# Lock screen using i3lock
+i3lock -i /tmp/screenshotblur.png
+notify-send -t 6000 "Master, welcome back!"

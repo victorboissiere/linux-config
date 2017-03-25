@@ -43,9 +43,7 @@ cp linux-config/git/.gitconfig ~/
 
 echo 'I3'
 
-cp linux-config/i3/i3/config ~/.i3/
-mkdir ~/i3blocks
-cp -r linux-config/i3/i3blocks ~/i3blocks
+./linux-config/setup/categories/i3.sh
 
 echo 'VIM'
 
