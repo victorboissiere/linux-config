@@ -1,6 +1,7 @@
 #!/bin/sh
 
-mkdir -p /tmp/setup && cd /tmp/setup && sudo apt-get update && sudo apt-get upgrade -y;
+rm -rf /tmp/setup
+mkdir /tmp/setup && cd /tmp/setup && sudo apt-get update && sudo apt-get upgrade -y;
 
 install_packages=''
 
