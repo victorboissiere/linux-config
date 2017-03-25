@@ -1,6 +1,6 @@
 #!/bin/sh
 
-mkdir /tmp/setup && cd /tmp/setup && sudo apt-get update && sudo apt-get upgrade;
+mkdir /tmp/setup && cd /tmp/setup && sudo apt-get update && sudo apt-get upgrade -y;
 
 install_packages=''
 
@@ -9,7 +9,7 @@ for package in `cat packages.txt`; do
 fi
 done
 
-sudo apt-get install $install_packages
+sudo apt-get install -y $install_packages
 
 git clone https://github.com/victorboissiere/linux-config
 git clone https://github.com/victorboissiere/linux-config ~/Documents
@@ -24,20 +24,20 @@ sudo mv composer.phar /usr/local/bin/composer
 
 echo 'JS DEV'
 
-curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
+curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add - -y
 echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
-sudo apt-get update && sudo apt-get install yarn
+sudo apt-get update && sudo apt-get install -y yarn
 
 echo 'ENTERTAINMENT'
 
 deb http://repository.spotify.com stable non-free
 sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys BBEBDCB318AD50EC6865090613B00F1FD2C19886
-sudo apt-get update && sudo apt-get install spotify-client
+sudo apt-get update && sudo apt-get install -y spotify-client
 
 echo 'INTERNET'
 
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-sudo dpkg -i google-chrome-stable_current_amd64.deb || sudo apt-get install -f
+sudo dpkg -i google-chrome-stable_current_amd64.deb || sudo apt-get install -f -y
 sudo dpkg -i google-chrome-stable_current_amd64.deb
 
 echo 'TERMINAL'
