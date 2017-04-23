@@ -9,6 +9,7 @@ Plug 'tpope/vim-surround'
 Plug 'trevordmiller/nova-vim'
 Plug 'joshdick/onedark.vim'
 Plug 'PotatoesMaster/i3-vim-syntax'
+Plug 'tpope/vim-fugitive'
 call plug#end()
 
 "-- MISC --"

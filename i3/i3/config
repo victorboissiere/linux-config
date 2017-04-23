@@ -7,6 +7,9 @@ font pango:System San Fransisco Display 9
 # thin borders
 hide_edge_borders both
 
+# Focus only follow keyboard
+focus_follows_mouse no
+
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
@@ -179,8 +182,11 @@ exec --no-startup-id spotify
 exec --no-startup-id slack
 exec --no-startup-id google-chrome
 
-# Monitors (Warning: also contains feh for background)
+# Monitors
 exec ~/.screenlayout/my_randr_monitors_config.sh
+
+# Specific background on each monitors with nitrogen
+exec --no-startup-id nitrogen --restore
 
 # Default monitors
 set $defaultMonitor "eDP1"

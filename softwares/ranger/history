@@ -1,7 +1,7 @@
-delete
 open
 !vim
 open_with vim
 AliasCommand 
-
 shell vim home.module.ts
+
+delete

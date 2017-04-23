@@ -12,6 +12,8 @@ ZSH_THEME="robbyrussell"
 plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
+source tiny-care.env
+
 
 #-- TMP --#
 ##############
@@ -43,6 +45,9 @@ alias vps="ssh victorboissiere@tivbroc.com"
 
 # Reload Apache
 alias rapache="sudo service apache2 restart"
+
+# Apache configuration file
+alias capache="sudo vim /etc/apache2/sites-available/000-default.conf"
 
 #-- LARAVEL --#
 ###############
@@ -124,10 +129,7 @@ alias egrep='egrep --color=auto'
 #-- COMPOSER --#
 ################
 
-c()
-{
-  composer $1
-}
+alias c='composer'
 
 #-- NODEJS --#
 ##############
@@ -140,7 +142,6 @@ alias y='yarn'
 
 # Fix command line
 eval "$(thefuck --alias)"
-
 
 
 # added by travis gem
