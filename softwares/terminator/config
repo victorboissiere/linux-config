@@ -19,8 +19,8 @@
 [profiles]
   [[default]]
     background_darkness = 0.78
-    background_image = None
     background_type = transparent
+    cursor_color = "#aaaaaa"
     font = Monospace 11
     scrollback_lines = 30000
     use_system_font = False

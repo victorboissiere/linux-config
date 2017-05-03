@@ -7,9 +7,6 @@ font pango:System San Fransisco Display 9
 # thin borders
 hide_edge_borders both
 
-# Focus only follow keyboard
-focus_follows_mouse no
-
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
@@ -54,16 +51,16 @@ bindsym $mod+space focus mode_toggle
 # focus the parent container
 bindsym $mod+a focus parent
 
-set $workspace1 "1:"
-set $workspace2 "2:"
+set $workspace1 "1:"
+set $workspace2 "2:"
 set $workspace3 "3:"
-set $workspace4 "4:"
-set $workspace5 "5:"
+set $workspace4 "4:"
+set $workspace5 "5:"
 set $workspace6 "6"
 set $workspace7 "7"
 set $workspace8 "8"
 set $workspace9 "9"
-set $workspace10 "10:"
+set $workspace10 "10:"
 
 # switch to workspace
 bindsym $mod+1 workspace $workspace1
@@ -94,7 +91,7 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 
 # resize window (you can also use the mouse for that)
-mode "  " {
+mode "Resize" {
   bindsym j resize shrink width 10 px or 10 ppt
   bindsym k resize grow height 10 px or 10 ppt
   bindsym l resize shrink height 10 px or 10 ppt
@@ -103,7 +100,7 @@ mode "  " {
   bindsym Escape mode "default"
 }
 
-bindsym $mod+r mode "  "
+bindsym $mod+r mode "Resize"
 
 bar {
   status_command i3blocks -c ~/i3blocks/i3blocks.conf
@@ -125,10 +122,11 @@ bar {
 
 #MY CUSTOM BIND
 
-# Increase luminosity
-bindcode $mod+71 exec xbacklight - 2
+# Waiting for bug fix : https://github.com/Skraelingjar/bright
 # Decrase luminosity
-bindcode $mod+72 exec xbacklight + 2
+bindcode $mod+71 exec bright -2 && notify-send "descrese"
+# Increase luminosity
+bindcode $mod+72 exec notify-send "bright -2"
 # Toggle volume
 bindcode $mod+76 exec amixer -D pulse set Master 1+ toggle
 # Decrease volume
@@ -160,11 +158,8 @@ client.focused_inactive $inactive-bg-color $inactive-bg-color $inactive-text-col
 client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color          #00ff00
 
 
-# Transpency fix for rofi
-exec --no-startup-id compton
-
 # Replace dmenu by rofi
-bindsym $mod+d exec rofi -show run -lines 10 -eh 2 -width 100 -padding 340 -opacity "85" -bw 0 -bc "$bg-color" -bg "$bg-color" -fg "$text-color" -hlbg "$bg-color" -hlfg "#9575cd"
+bindsym $mod+d exec ulauncher
 
 # Keys
 exec_always xmodmap -e "clear lock" #disable caps lock switch
@@ -247,6 +242,6 @@ exec --no-startup-id killall -q notify-osd
 #replace default deamon notification with dunst
 exec --no-startup-id dunst
 # Wifi menu in top bar
-exec --no-startup-id nm-applet
-# Auto lock
-# exec --no-startup-id xautolock -time 10 -locker "lock"
+exec --no-startup-id dbus-launch nm-applet
+# Launcher
+exec --no-startup-id ulauncher

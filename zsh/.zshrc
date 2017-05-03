@@ -9,17 +9,20 @@ export COMPOSER_DISABLE_XDEBUG_WARN=false
 
 ZSH_THEME="robbyrussell"
 
-plugins=(git)
+plugins=(git zsh-syntax-highlighting yarn)
+
+# "Cd history"
+setopt autopushd pushdminus pushdsilent pushdtohome
 
 source $ZSH/oh-my-zsh.sh
-source tiny-care.env
+source ~/tiny-care.env
 
 
 #-- TMP --#
 ##############
-alias backend='cd /var/www/checkMail-backend'
-alias frontend='cd /var/www/checkMail-frontend'
-alias doc='cd ~/prog/mti/checkmail-doc'
+alias backend='cd /var/www/safedesk-backend'
+alias frontend='cd /var/www/safedesk-frontend'
+alias stories='cd ~/prog/mti/safedesk-stories'
 
 #-- GLOBAL --#
 ##############
@@ -124,6 +127,8 @@ alias nbc='git log --oneline | wc -l'
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
+
+alias upload-scan='cd ~/scan && node index.js'
 
 
 #-- COMPOSER --#
