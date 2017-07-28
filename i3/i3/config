@@ -171,14 +171,14 @@ exec setxkbmap us
 # Disable touchpad
 exec ~/i3blocks/touchpad.sh
 
+# Monitors
+exec ~/.screenlayout/my_randr_monitors_config.sh
+
 # Startup
 exec shutter --min_at_startup
 exec --no-startup-id spotify
 exec --no-startup-id slack
 exec --no-startup-id google-chrome
-
-# Monitors
-exec ~/.screenlayout/my_randr_monitors_config.sh
 
 # Specific background on each monitors with nitrogen
 exec --no-startup-id nitrogen --restore

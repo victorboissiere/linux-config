@@ -22,7 +22,9 @@ source ~/tiny-care.env
 ##############
 alias backend='cd /var/www/safedesk-backend'
 alias frontend='cd /var/www/safedesk-frontend'
-alias stories='cd ~/prog/mti/safedesk-stories'
+alias dealfront='cd /var/www/dealon-frontend'
+alias dealback='cd /var/www/dealon-backend'
+alias edu-manager='cd /var/www/edu-manager'
 
 #-- GLOBAL --#
 ##############
@@ -36,6 +38,11 @@ export EDITOR="vim"
 export NNTPSERVER="news.epita.fr"
 # i3blocks script for internet
 export INTERNET="OK"
+
+# Git some autocompletion
+autoload bashcompinit
+bashcompinit
+source ~/gh_complete.sh
 
 #-- WEBSITES --#
 ################
@@ -72,6 +79,24 @@ alias gaa="git add --all"
 alias gc="git commit -m "
 alias gp="git push"
 alias nah="git reset --hard HEAD"
+
+# Open git in browser
+function go() {
+  giturl=$(git config --get remote.origin.url)
+  if [ "$giturl" = "" ]; then
+     echo "Not a git repository or no remote.origin.url set"
+     return
+  fi
+
+  giturl=${giturl/git\@github\.com\:/https://github.com/}
+  giturl=${giturl/\.git/\/tree/}
+  branch="$(git symbolic-ref HEAD 2>/dev/null)" ||
+  branch="(unnamed branch)"     # detached HEAD
+  branch=${branch##refs/heads/}
+  giturl=$giturl$branch
+  "Opening your git.."
+  google-chrome $giturl > /dev/null 2>&1
+}
 
 #-- CONFIG FILES --#
 ####################

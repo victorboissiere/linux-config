@@ -3,5 +3,6 @@ open
 open_with vim
 AliasCommand 
 shell vim home.module.ts
-
 delete
+
+shell q
