@@ -1,3 +1,0 @@
-#!/usr/bin/env bash
-
-ifstat -q -i $(ip -4 route ls | grep default | grep -Po '(?<=dev )(\S+)') -S 0.1 1 | perl -n -e '/(\d+\.\d+).*(\d+\.\d+)/ && print " $1 KBps  $2 KBps\n"'

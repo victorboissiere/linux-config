@@ -1,24 +1,9 @@
 #!/bin/sh
 
-cp -r ~/.i3 i3/ && rm -rf i3/i3 && mv i3/.i3 i3/i3
-cp -r ~/i3blocks i3/
+set -e
 
-# Soft
-cp ~/.vimrc vim/
-cp -r ~/.vim/snippets vim/snippets
-cp -r ~/.config/terminator softwares/
-cp -r ~/.config/zathura softwares/
-cp -r ~/.config/ranger softwares/
-
-# Useful scripts
-cp /bin/lock bash_scripts/
-
-# Zsh
-cp ~/.zshrc zsh/
-
-# Git
-cp ~/.gitconfig git/
-
+cp -r ~/.config/i3 ./
+cp -r ~/.i3/lock ./i3/lock
 
 echo "Config imported!"
 
