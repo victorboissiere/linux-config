@@ -4,6 +4,7 @@ set -e
 
 cp -r ~/.config/i3 ./
 cp -r ~/.i3/lock ./i3/lock
+cp -r ~/.config/polybar ./polybar
 
 echo "Config imported!"
 

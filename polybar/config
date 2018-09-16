@@ -1,0 +1,185 @@
+[bar/bar]
+monitor = ${env:MONITOR:}
+
+;----------;
+; LOCATION ;
+;----------;
+
+bottom = false
+wm-restack = none
+override-redirect = false
+
+modules-left = i3 opsgenie
+modules-center = publicip sep network
+modules-right = volume sep filesystem sep memory sep cpu sep clock
+
+;-------;
+; FONTS ;
+;-------;
+
+font-0 = Hack:size=10;3
+font-1 = "Font Awesome 5 Free:style=Solid:pixelsize=12;3"
+font-2 = "Font Awesome 5 Free:style=Regular:pixelsize=12;3"
+font-3 = "Font Awesome 5 Brands:pixelsize=12;3"
+
+;--------;
+; COLORS ;
+;--------;
+
+background = #212121
+foreground = #d3d0c8
+border-color = 0
+
+;---------------;
+; MISCELLANEOUS ;
+;---------------;
+
+fixed-center = true
+padding-left = 2
+padding-right = 2
+module-margin = 1.5
+
+
+tray-position = right
+tray-detached = false
+
+;---------;
+; MODULES ;
+;---------;
+
+[module/i3]
+type = internal/i3
+
+format = <label-state> <label-mode>
+index-sort = true
+wrapping-scroll = false
+
+label-focused = %index%
+label-focused-foreground = #ffffff
+label-focused-background = #3f3f3f
+label-focused-underline = #fba922
+label-focused-padding = 4
+
+label-unfocused = %index%
+label-unfocused-padding = 4
+
+label-visible = %index%
+label-visible-underline = #555555
+label-visible-padding = 4
+
+label-urgent = %index%
+label-urgent-foreground = #000000
+label-urgent-background = #bd2c40
+label-urgent-padding = 4
+
+; Separator in between workspaces
+label-separator-padding = 2
+label-separator-foreground = #ffb52a
+
+[module/volume]
+type = internal/volume
+
+format-volume = VOL <ramp-volume> <label-volume>
+format-muted =  0%
+
+ramp-volume-0 = 
+ramp-volume-1 = 
+ramp-volume-2 = 
+
+[module/cpu]
+type = internal/cpu
+interval = 0.5
+format = <label> <ramp-coreload>
+label = CPU
+
+ramp-coreload-0 = ▁
+ramp-coreload-0-font = 2
+ramp-coreload-0-foreground = #aaff77
+ramp-coreload-1 = ▂
+ramp-coreload-1-font = 2
+ramp-coreload-1-foreground = #aaff77
+ramp-coreload-2 = ▃
+ramp-coreload-2-font = 2
+ramp-coreload-2-foreground = #aaff77
+ramp-coreload-3 = ▄
+ramp-coreload-3-font = 2
+ramp-coreload-3-foreground = #aaff77
+ramp-coreload-4 = ▅
+ramp-coreload-4-font = 2
+ramp-coreload-4-foreground = #fba922
+ramp-coreload-5 = ▆
+ramp-coreload-5-font = 2
+ramp-coreload-5-foreground = #fba922
+ramp-coreload-6 = ▇
+ramp-coreload-6-font = 2
+ramp-coreload-6-foreground = #ff5555
+ramp-coreload-7 = █
+ramp-coreload-7-font = 2
+ramp-coreload-7-foreground = #ff5555
+
+[module/memory]
+type = internal/memory
+format = <label> <bar-used>
+label = MEM
+
+bar-used-width = 10
+bar-used-foreground-0 = #aaff77
+bar-used-foreground-1 = #aaff77
+bar-used-foreground-2 = #fba922
+bar-used-foreground-3 = #ff5555
+bar-used-indicator = |
+bar-used-indicator-font = 6
+bar-used-indicator-foreground = #ff
+bar-used-fill = ─
+bar-used-fill-font = 6
+bar-used-empty = ─
+bar-used-empty-font = 6
+bar-used-empty-foreground = #444444
+
+[module/network]
+interface = enp3s0
+type = internal/network
+interval = 1.0
+ping-interval = 10
+
+format-connected = NET <label-connected>
+label-connected = %local_ip%    %downspeed%    %upspeed%
+format-disconnected = <label-disconnected>
+label-disconnected = not connected
+label-disconnected-foreground = #66
+
+
+[module/filesystem]
+type = internal/fs
+interval = 25
+
+mount-0 = /
+
+format-mounted = FS <label-mounted>
+format-unmounted = <label-unmounted>
+
+label-mounted = %free%
+label-unmounted = %mountpoint% not mounted
+
+[module/clock]
+type = internal/date
+interval = 1
+date = "%d/%m/%Y %a"
+time = "%H:%M"
+label = %date% %time%⎈
+
+[module/publicip]
+type = custom/script
+exec = curl -s ip.gitcommit.fr
+format = PUB <label>
+interval = 30
+
+[module/opsgenie]
+type = custom/script
+exec = /home/vboissiere/prog/factory/opsgenie/show_alerts.py
+format = <label>
+interval = 60
+
+[module/sep]
+type = custom/text
+content = "||"
